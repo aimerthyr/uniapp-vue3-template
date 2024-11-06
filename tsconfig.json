@@ -1,0 +1,28 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@api/*": ["./src/api/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@stores/*": ["./src/stores/*"],
+      "@uni_modules/*": ["./uni_modules/*"],
+      "@src/*": ["./src/*"] // 这行需要放在最下面（这样自动导入修复时，会优先匹配上面的）
+    },
+    "lib": ["esnext", "dom"],
+    "types": ["@dcloudio/types"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "uni_modules/**/*.vue",
+    "uni_modules/**/*.ts",
+    "uni_modules/**/*.js",
+    "uni_modules/**/*.tsx"
+  ]
+}
